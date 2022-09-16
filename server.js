@@ -5,7 +5,7 @@ const httpServer = http.createServer(app);
 const { Server } = require("socket.io");
 const io = require("socket.io")(httpServer, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "http://youtube9842.herokuapp.com/",
     methods: ["GET", "POST"]
   }
 });
@@ -20,6 +20,6 @@ io.on('connection', (socket) => {
   console.log('a user connected');
 });
 
-httpServer.listen(port, () => {
+httpServer.listen(port, "http://youtubeserver9842.herokuapp.com/", () => {
   console.log(`listening on *:${port}`);
 });
